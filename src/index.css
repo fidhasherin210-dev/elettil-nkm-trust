@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Foundation Colors - Compassionate & Trustworthy */
+    --background: 210 40% 98%;
+    --foreground: 215 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 20%;
+
+    /* Primary - Warm Coral from logo */
+    --primary: 12 80% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Slate Gray from logo */
+    --secondary: 200 15% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted - Soft backgrounds */
+    --muted: 200 30% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent - Warm Green for hope */
+    --accent: 160 40% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Teal - Healthcare trust */
+    --teal: 175 50% 40%;
+    --teal-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 90%;
+    --input: 200 20% 90%;
+    --ring: 12 80% 55%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - keeping defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(200 30% 96%) 0%, hsl(180 25% 94%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(12 80% 55%) 0%, hsl(20 85% 60%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(160 40% 45%) 0%, hsl(175 50% 40%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(215 25% 20% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(215 25% 20% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(215 25% 20% / 0.15);
+  }
+
+  .dark {
+    --background: 215 30% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 12 75% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 15% 35%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 160 35% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --teal: 175 45% 35%;
+    --teal-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 12 75% 58%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl shadow-card hover:shadow-elevated transition-shadow duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
